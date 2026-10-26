@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 #include <ctime>
 #include "pcap_reader.h"
 #include "packet_parser.h"

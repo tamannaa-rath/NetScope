@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <algorithm>
 
 namespace DPI {
 
@@ -224,7 +225,7 @@ PacketAction FastPathProcessor::checkRules(const PacketJob& job, Connection* con
             case RuleManager::BlockReason::APP:
                 ss << "App " << block_reason->detail;
                 break;
-            case RuleManager::BlockReason::DOMAIN:
+            case RuleManager::BlockReason::DOMAIN_RULE:
                 ss << "Domain " << block_reason->detail;
                 break;
             case RuleManager::BlockReason::PORT:

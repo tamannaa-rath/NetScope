@@ -91,7 +91,7 @@ public:
     // Check if a packet/connection should be blocked based on all rules
     // Returns the reason if blocked, nullopt if allowed
     struct BlockReason {
-        enum Type { IP, APP, DOMAIN, PORT } type;
+        enum Type { IP, APP, DOMAIN_RULE, PORT } type;
         std::string detail;
     };
     
@@ -101,8 +101,7 @@ public:
         AppType app,
         const std::string& domain) const;
     
-    // ========== Rule Persistence ==========
-    
+    // ========== Rule Persistence ==========    
     // Save rules to file
     bool saveRules(const std::string& filename) const;
     
